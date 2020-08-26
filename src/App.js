@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import fakeUser from './fakeUser';
+import User from './User/User';
+import Header from './Header/Header';
 
 function App() {
+  const [users, setUsers] = useState(fakeUser);
+  const [count, setCount] = useState([]);
+
+  const handleCount = (info) =>{
+    const newCount = [...count, info];
+    setCount(newCount);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header count={count}></Header>
+      {
+        users.map(user => <User handleCount={handleCount} user = {user}></User>)
+      }
     </div>
   );
 }

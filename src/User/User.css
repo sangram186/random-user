@@ -1,0 +1,31 @@
+.users{
+    display: flex;
+    padding: 17px;
+    width: 46%;
+    margin: auto;
+    background-color: white;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+.users img{
+    border-radius: 50%;
+    width: 88px;
+}
+.user-info{
+    color: black;
+    margin-left: 3rem;
+    line-height: 1.7rem;
+}
+.user-info button{
+    background-color: rgb(82 161 161);
+    padding: 3px 5px;
+    font-size: 1rem;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+}
+.user-info button:active{
+    font-size: .9rem;
+}
